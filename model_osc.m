@@ -42,7 +42,7 @@ B = sqrt((sqrt(1+4*c*lambda)-1)/2);
 
 Theta = 4*ellipticK(k)/B;
 %Theta = (2*1i/B)*ellipticCK(k);
-omega = 0;%0.487671048; %(2*pi)/Theta; %0.987671048;%0.487671048;%(2*pi)/Theta;
+omega = 0.7350-0.25;%1.4750;%0;%0.487671048; %(2*pi)/Theta; %0.987671048;%0.487671048;%(2*pi)/Theta;
 
 %sigmax= 1/10; 
 %sigmap=sigmax;

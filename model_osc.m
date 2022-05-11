@@ -15,7 +15,7 @@ set(groot, 'defaultFigureUnits', 'centimeters', 'defaultFigurePosition', [0 0 25
 rng(0, 'twister');
 
 dt = 0.01; %krok czasowy
-N = 5000;
+N = 10000;
 
 time = [0:dt:dt*N]; %siatka czasowa
 
@@ -26,7 +26,7 @@ xc = 1;
 lambda = (A*xc*xc)./(Gamma*Gamma*m);
 
 x0 = 0.1;
-p0 = 2;
+p0 = -2;
 
 c = 0.5*p0*p0 - 0.5*x0*x0 + 0.25*lambda*x0*x0*x0*x0;
 k = -1/(2*c*lambda)-(1/(2*c*lambda))*sqrt(1+4*c*lambda) - 1;
@@ -42,7 +42,7 @@ B = sqrt((sqrt(1+4*c*lambda)-1)/2);
 
 Theta = 4*ellipticK(k)/B;
 %Theta = (2*1i/B)*ellipticCK(k);
-omega = 0.487671048; %(2*pi)/Theta; %0.987671048;%0.487671048;%(2*pi)/Theta;
+omega = 0.7377;%0.487671048; %(2*pi)/Theta; %0.987671048;%0.487671048;%(2*pi)/Theta;
 
 %sigmax= 1/10; 
 %sigmap=sigmax;

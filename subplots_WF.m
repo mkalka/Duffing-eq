@@ -8,12 +8,13 @@ set(0,'defaulttextinterpreter','latex');
 set(0, 'defaultAxesTickLabelInterpreter','latex');
 set(0,'defaultAxesFontName', 'TeX Gyre Schola Math');
 set(0,'defaultAxesFontSize',20);
+set(gcf,'color','w');
 
 figure(7)
 %w0 = max([max(xx_above_0), max(xx_above_plus), max(xx_above_minus), max(pp_above_0), max(pp_above_plus), max(pp_above_minus)]);
 % 
-xx(1) = subplot(3,2,1)
-contourf(w,t,xx_above_0, 'EdgeColor','none');
+xx(1) = subplot(3,2,1);
+imagesc(w,t,xx_above_0)%, 'EdgeColor','none');
 %hold on
 %xline(mean([-2.97000000000000;-2.96000000000000;-2.95000000000000;-2.94000000000000]));
 hold on
@@ -34,7 +35,7 @@ xline(mean([2.19999999999989;2.20999999999989;2.21999999999989;2.22999999999989]
 %xline(mean([2.93999999999987;2.94999999999987;2.95999999999987;2.96999999999987]));
 
 axis square
-NW = [max(xlim) max(ylim)]+[-diff(xlim)*0.02 -diff(ylim)*0.05];
+NW = [max(xlim) max(ylim)]+[-diff(xlim)*0.17 -diff(ylim)*0.08];
 text(NW(1),NW(2),'(a)', 'FontSize', 20)
 
 w0 = max(max(xx_above_0));
@@ -43,9 +44,11 @@ axis square;
 c.TickLabelInterpreter = 'latex';
 colormap(redblue);
 caxis([-w0 w0]);
+c.LineWidth = 1.5;
+
 % 
-pp(1) = subplot(3,2,2)
-contourf(w,t,pp_above_0, 'EdgeColor','none');
+pp(1) = subplot(3,2,2);
+imagesc(w,t,pp_above_0)%, 'EdgeColor','none');
 %hold on
 %xline(mean([-2.97000000000000;-2.96000000000000;-2.95000000000000;-2.94000000000000]));
 hold on
@@ -67,7 +70,7 @@ xline(mean([2.19999999999989;2.20999999999989;2.21999999999989;2.22999999999989]
 
 axis square
 
-NW = [max(xlim) max(ylim)]+[-diff(xlim)*0.02 -diff(ylim)*0.05];
+NW = [max(xlim) max(ylim)]+[-diff(xlim)*0.17 -diff(ylim)*0.08];
 text(NW(1),NW(2),'(b)', 'FontSize', 20)
 
 w0 = max(max(pp_above_0));
@@ -76,9 +79,11 @@ axis square;
 c.TickLabelInterpreter = 'latex';
 colormap(redblue);
 caxis([-w0 w0]);
+c.LineWidth = 1.5;
+
 % 
-xx(2) = subplot(3,2,3)
-contourf(w,t,xx_above_plus, 'EdgeColor','none');
+xx(2) = subplot(3,2,3);
+imagesc(w,t,xx_above_plus)%, 'EdgeColor','none');
 %hold on
 %xline(mean([-2.97000000000000;-2.96000000000000;-2.95000000000000;-2.94000000000000]));
 hold on
@@ -99,7 +104,7 @@ xline(mean([2.19999999999989;2.20999999999989;2.21999999999989;2.22999999999989]
 axis square
 ylabel('$\tau$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
 
-NW = [max(xlim) max(ylim)]+[-diff(xlim)*0.02 -diff(ylim)*0.05];
+NW = [max(xlim) max(ylim)]+[-diff(xlim)*0.17 -diff(ylim)*0.08];
 text(NW(1),NW(2),'(c)', 'FontSize', 20)
 
 w0 = max(max(xx_above_plus));
@@ -108,9 +113,11 @@ axis square;
 c.TickLabelInterpreter = 'latex';
 colormap(redblue);
 caxis([-w0 w0]);
+c.LineWidth = 1.5;
+
 % 
-pp(2) = subplot(3,2,4)
-contourf(w,t,pp_above_plus, 'EdgeColor','none');
+pp(2) = subplot(3,2,4);
+imagesc(w,t,pp_above_plus)%, 'EdgeColor','none');
 %hold on
 %xline(mean([-2.97000000000000;-2.96000000000000;-2.95000000000000;-2.94000000000000]));
 hold on
@@ -131,7 +138,7 @@ xline(mean([2.19999999999989;2.20999999999989;2.21999999999989;2.22999999999989]
 %xline(mean([2.93999999999987;2.94999999999987;2.95999999999987;2.96999999999987]));
 
 axis square
-NW = [max(xlim) max(ylim)]+[-diff(xlim)*0.02 -diff(ylim)*0.05];
+NW = [max(xlim) max(ylim)]+[-diff(xlim)*0.17 -diff(ylim)*0.08];
 text(NW(1),NW(2),'(d)', 'FontSize', 20)
 
 w0 = max(max(pp_above_plus));
@@ -140,10 +147,12 @@ axis square;
 c.TickLabelInterpreter = 'latex';
 colormap(redblue);
 caxis([-w0 w0]);
-% 
-xx(3) = subplot(3,2,5)
+c.LineWidth = 1.5;
 
-contourf(w,t,xx_above_minus, 'EdgeColor','none');
+% 
+xx(3) = subplot(3,2,5);
+
+imagesc(w,t,xx_above_minus)%, 'EdgeColor','none');
 %hold on
 %xline(mean([-2.97000000000000;-2.96000000000000;-2.95000000000000;-2.94000000000000]));
 hold on
@@ -162,7 +171,7 @@ hold on
 xline(mean([2.19999999999989;2.20999999999989;2.21999999999989;2.22999999999989]));
 
 axis square
-NW = [max(xlim) max(ylim)]+[-diff(xlim)*0.02 -diff(ylim)*0.05];
+NW = [max(xlim) max(ylim)]+[-diff(xlim)*0.17 -diff(ylim)*0.08];
 text(NW(1),NW(2),'(e)', 'FontSize', 20)
 
 w0 = max(max(xx_above_minus));
@@ -171,9 +180,11 @@ axis square;
 c.TickLabelInterpreter = 'latex';
 colormap(redblue);
 caxis([-w0 w0]);
+c.LineWidth = 1.5;
+
 % 
-pp(3) = subplot(3,2,6)
-contourf(w,t,pp_above_minus, 'EdgeColor','none');
+pp(3) = subplot(3,2,6);
+imagesc(w,t,pp_above_minus)%, 'EdgeColor','none');
 %hold on
 %xline(mean([-2.97000000000000;-2.96000000000000;-2.95000000000000;-2.94000000000000]));
 hold on
@@ -197,7 +208,7 @@ axis square
 
 xlabel('$\omega$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
 
-NW = [max(xlim) max(ylim)]+[-diff(xlim)*0.02 -diff(ylim)*0.05];
+NW = [max(xlim) max(ylim)]+[-diff(xlim)*0.17 -diff(ylim)*0.08];
 text(NW(1),NW(2),'(f)', 'FontSize', 20)
 
 w0 = max(max(pp_above_minus));
@@ -206,3 +217,18 @@ axis square;
 c.TickLabelInterpreter = 'latex';
 colormap(redblue);
 caxis([-w0 w0]);
+c.LineWidth = 1.5;
+
+xx(1).LineWidth = 1.5;
+xx(2).LineWidth = 1.5;
+xx(3).LineWidth = 1.5;
+pp(3).LineWidth = 1.5;
+pp(2).LineWidth = 1.5;
+pp(1).LineWidth = 1.5;
+
+xx(1).YDir= 'normal';
+xx(2).YDir= 'normal';
+xx(3).YDir= 'normal';
+pp(3).YDir= 'normal';
+pp(2).YDir = 'normal';
+pp(1).YDir = 'normal';

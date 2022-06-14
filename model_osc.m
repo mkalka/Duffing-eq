@@ -18,6 +18,8 @@ dt = 0.01; %krok czasowy
 N = 10000;
 
 time = [0:dt:dt*N]; %siatka czasowa
+minus = 1;
+
 
 m = 1;
 Gamma = 1;
@@ -26,7 +28,7 @@ xc = 1;
 lambda = (A*xc*xc)./(Gamma*Gamma*m);
 
 x0 = 0.1;
-p0 = -2;
+p0 = 2;
 
 c = 0.5*p0*p0 - 0.5*x0*x0 + 0.25*lambda*x0*x0*x0*x0;
 k = -1/(2*c*lambda)-(1/(2*c*lambda))*sqrt(1+4*c*lambda) - 1;
@@ -42,7 +44,7 @@ B = sqrt((sqrt(1+4*c*lambda)-1)/2);
 
 Theta = 4*ellipticK(k)/B;
 %Theta = (2*1i/B)*ellipticCK(k);
-omega = 0.7350-0.25;%1.4750;%0;%0.487671048; %(2*pi)/Theta; %0.987671048;%0.487671048;%(2*pi)/Theta;
+omega = 1.4750;%0.7350-0.25;%1.4750;%0;%0.487671048; %(2*pi)/Theta; %0.987671048;%0.487671048;%(2*pi)/Theta;
 
 %sigmax= 1/10; 
 %sigmap=sigmax;
@@ -65,9 +67,14 @@ omega = 0.7350-0.25;%1.4750;%0;%0.487671048; %(2*pi)/Theta; %0.987671048;%0.4876
 %else
 
 f = 0.35;%[0.01:0.05:1.06];
-
-for i = 1:length(f)
-[x(:,i), p(:,i)] = rk4_zab_4(x0, p0, 1, N, dt, lambda, omega,f(i));    
+if minus == 1
+    for i = 1:length(f)
+    [x(:,i), p(:,i)] = rk4_zab_4minus(x0, p0, 1, N, dt, lambda, omega,f(i));    
+    end
+else
+    for i = 1:length(f)
+    [x(:,i), p(:,i)] = rk4_zab_4(x0, p0, 1, N, dt, lambda, omega,f(i));    
+    end    
 end
 %e = p.^2/(2*m) - 0.5*x.^2 + 0.25*lambda*x.^4;
 

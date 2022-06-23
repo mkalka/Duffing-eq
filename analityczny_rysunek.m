@@ -63,6 +63,7 @@ clear c_below k_below modified_time_below phi_below F_below c_above k_above modi
 %% Drawing
 
 %% Below Trajectories
+%{
 figure(1)
 plot(time, x_below, '-g', time, p_below,'-r')
 hold on
@@ -146,79 +147,53 @@ text(NW(1),NW(2),'(f)', 'FontSize', 30)
 %% Subplots
 set(0,'defaultAxesFontSize',20);
 figure(7)
+%}
 
 % Below PS
-ps(1) = subplot(3,2,1)
+ps(1) = subplot(2,3,1)
 plot(x_below, p_below, '-k', 'LineWidth', 2) 
 hold on
 plot(x0_below, p0_below, 'or', 'MarkerFaceColor', 'r')
-%xlabel('$X$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
-%ylabel('$P$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
-axis square
-%axis([-5 5 -3.5 3.5])
-%xticks([-5 -4 -3 -2 -1 0 1 2 3 4 5])
-NW = [min(xlim) max(ylim)]+[diff(xlim)*0.02 -diff(ylim)*0.05];
-text(NW(1),NW(2),'(b)', 'FontSize', 20)
-
-% Below trajectories
-tr(1) = subplot(3,2,2)
-plot(time, x_below, '-g', time, p_below,'-r')
-hold on
-%ylabel('$X, P$ [arb. unit]', 'Interpreter', 'latex')
-ytickformat('%.0f')
-legend('$~X=X(\tau)$', '$~P=P(\tau)$', 'Interpreter', 'latex', 'Location', 'Southeast')
-%xlabel('$\tau$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
-axis square
-%yticks([-5 -4 -3 -2 -1 0 1 2 3 4 5])
-NW = [min(xlim) max(ylim)]+[diff(xlim)*0.02 -diff(ylim)*0.05];
-text(NW(1),NW(2),'(a)', 'FontSize', 30)
-
-% Sep PS
-ps(2) = subplot(3,2,3)
-plot(x_sep, p_sep, '-k', 'LineWidth', 2) 
-hold on
-plot(x0_sep, p0_sep, 'or', 'MarkerFaceColor', 'r')
 %xlabel('$X$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
 ylabel('$P$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
 axis square
 %axis([-5 5 -3.5 3.5])
 %xticks([-5 -4 -3 -2 -1 0 1 2 3 4 5])
 NW = [min(xlim) max(ylim)]+[diff(xlim)*0.02 -diff(ylim)*0.05];
-text(NW(1),NW(2),'(d)', 'FontSize', 20)
+text(NW(1),NW(2),'(a)', 'FontSize', 30)
 
-% Sep trajectories
-tr(2) = subplot(3,2,4)
-plot(time, x_sep, '-g', time, p_sep,'-r')
+
+% Below trajectories
+tr(1) = subplot(2,3,4)
+plot(time, x_below, '-g', time, p_below,'-r')
 hold on
-ylabel('$X, P$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
+ylabel('$X, P$ [arb. unit]', 'Interpreter', 'latex', 'FontSize',30)
 ytickformat('%.0f')
-legend('$~X=X(\tau)$', '$~P=P(\tau)$', 'Interpreter', 'latex', 'Location', 'Southeast')
+%legend('$~X=X(\tau)$', '$~P=P(\tau)$', 'Interpreter', 'latex', 'Location', 'Southeast')
 %xlabel('$\tau$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
 axis square
-%axis([0 20 -5 5])
 %yticks([-5 -4 -3 -2 -1 0 1 2 3 4 5])
 NW = [min(xlim) max(ylim)]+[diff(xlim)*0.02 -diff(ylim)*0.05];
-text(NW(1),NW(2),'(c)', 'FontSize', 30)
+text(NW(1),NW(2),'(b)', 'FontSize', 30)
 
-% Above PS
-ps(3) = subplot(3,2,5)
-plot(x_above, p_above, '-k', 'LineWidth', 2) 
+% Sep PS
+ps(2) = subplot(2,3,2)
+plot(x_sep, p_sep, '-k', 'LineWidth', 2) 
 hold on
-plot(x0_above, p0_above, 'or', 'MarkerFaceColor', 'r')
+plot(x0_sep, p0_sep, 'or', 'MarkerFaceColor', 'r')
 xlabel('$X$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
 %ylabel('$P$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
 axis square
 %axis([-5 5 -3.5 3.5])
 %xticks([-5 -4 -3 -2 -1 0 1 2 3 4 5])
 NW = [min(xlim) max(ylim)]+[diff(xlim)*0.02 -diff(ylim)*0.05];
-text(NW(1),NW(2),'(f)', 'FontSize', 20)
-%grid on
+text(NW(1),NW(2),'(c)', 'FontSize', 30)
 
-% Above trajectories
-tr(3) = subplot(3,2,6)
-plot(time, x_above, '-g', time, p_above,'-r')
+% Sep trajectories
+tr(2) = subplot(2,3,5)
+plot(time, x_sep, '-g', time, p_sep,'-r')
 hold on
-%ylabel('$X, P$ [arb. unit]', 'Interpreter', 'latex')
+%ylabel('$X, P$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
 ytickformat('%.0f')
 legend('$~X=X(\tau)$', '$~P=P(\tau)$', 'Interpreter', 'latex', 'Location', 'Southeast')
 xlabel('$\tau$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
@@ -226,4 +201,42 @@ axis square
 %axis([0 20 -5 5])
 %yticks([-5 -4 -3 -2 -1 0 1 2 3 4 5])
 NW = [min(xlim) max(ylim)]+[diff(xlim)*0.02 -diff(ylim)*0.05];
+text(NW(1),NW(2),'(d)', 'FontSize', 30)
+
+% Above PS
+ps(3) = subplot(2,3,3)
+plot(x_above, p_above, '-k', 'LineWidth', 2) 
+hold on
+plot(x0_above, p0_above, 'or', 'MarkerFaceColor', 'r')
+%xlabel('$X$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
+%ylabel('$P$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
+axis square
+%axis([-5 5 -3.5 3.5])
+%xticks([-5 -4 -3 -2 -1 0 1 2 3 4 5])
+NW = [min(xlim) max(ylim)]+[diff(xlim)*0.02 -diff(ylim)*0.05];
 text(NW(1),NW(2),'(e)', 'FontSize', 30)
+%grid on
+
+% Above trajectories
+tr(3) = subplot(2,3,6)
+plot(time, x_above, '-g', time, p_above,'-r')
+hold on
+%ylabel('$X, P$ [arb. unit]', 'Interpreter', 'latex')
+ytickformat('%.0f')
+%legend('$~X=X(\tau)$', '$~P=P(\tau)$', 'Interpreter', 'latex', 'Location', 'Southeast')
+%xlabel('$\tau$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
+axis square
+%axis([0 20 -5 5])
+%yticks([-5 -4 -3 -2 -1 0 1 2 3 4 5])
+NW = [min(xlim) max(ylim)]+[diff(xlim)*0.02 -diff(ylim)*0.05];
+text(NW(1),NW(2),'(f)', 'FontSize', 30)
+
+tr(1).LineWidth = 1.5;
+tr(2).LineWidth = 1.5;
+tr(3).LineWidth = 1.5
+
+ps(1).LineWidth = 1.5;
+ps(2).LineWidth = 1.5;
+ps(3).LineWidth = 1.5;
+
+set(gcf,'color','w');

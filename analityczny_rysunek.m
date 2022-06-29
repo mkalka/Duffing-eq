@@ -164,7 +164,15 @@ text(NW(1),NW(2),'(a)', 'FontSize', 30)
 
 
 % Below trajectories
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 tr(1) = subplot(2,3,4)
+=======
+tr(1) = subplot(2,3,2)
+>>>>>>> Stashed changes
+=======
+tr(1) = subplot(2,3,2)
+>>>>>>> Stashed changes
 plot(time, x_below, '-g', time, p_below,'-r')
 hold on
 ylabel('$X, P$ [arb. unit]', 'Interpreter', 'latex', 'FontSize',30)
@@ -177,7 +185,15 @@ NW = [min(xlim) max(ylim)]+[diff(xlim)*0.02 -diff(ylim)*0.05];
 text(NW(1),NW(2),'(b)', 'FontSize', 30)
 
 % Sep PS
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ps(2) = subplot(2,3,2)
+=======
+ps(2) = subplot(2,3,3)
+>>>>>>> Stashed changes
+=======
+ps(2) = subplot(2,3,3)
+>>>>>>> Stashed changes
 plot(x_sep, p_sep, '-k', 'LineWidth', 2) 
 hold on
 plot(x0_sep, p0_sep, 'or', 'MarkerFaceColor', 'r')
@@ -190,7 +206,15 @@ NW = [min(xlim) max(ylim)]+[diff(xlim)*0.02 -diff(ylim)*0.05];
 text(NW(1),NW(2),'(c)', 'FontSize', 30)
 
 % Sep trajectories
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 tr(2) = subplot(2,3,5)
+=======
+tr(2) = subplot(2,3,4)
+>>>>>>> Stashed changes
+=======
+tr(2) = subplot(2,3,4)
+>>>>>>> Stashed changes
 plot(time, x_sep, '-g', time, p_sep,'-r')
 hold on
 %ylabel('$X, P$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
@@ -204,7 +228,15 @@ NW = [min(xlim) max(ylim)]+[diff(xlim)*0.02 -diff(ylim)*0.05];
 text(NW(1),NW(2),'(d)', 'FontSize', 30)
 
 % Above PS
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ps(3) = subplot(2,3,3)
+=======
+ps(3) = subplot(2,3,5)
+>>>>>>> Stashed changes
+=======
+ps(3) = subplot(2,3,5)
+>>>>>>> Stashed changes
 plot(x_above, p_above, '-k', 'LineWidth', 2) 
 hold on
 plot(x0_above, p0_above, 'or', 'MarkerFaceColor', 'r')

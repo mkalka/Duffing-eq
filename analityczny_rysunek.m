@@ -165,7 +165,11 @@ text(NW(1),NW(2),'(a)', 'FontSize', 30)
 
 % Below trajectories
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 tr(1) = subplot(2,3,4)
+=======
+tr(1) = subplot(2,3,2)
+>>>>>>> Stashed changes
 =======
 tr(1) = subplot(2,3,2)
 >>>>>>> Stashed changes
@@ -182,7 +186,11 @@ text(NW(1),NW(2),'(b)', 'FontSize', 30)
 
 % Sep PS
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ps(2) = subplot(2,3,2)
+=======
+ps(2) = subplot(2,3,3)
+>>>>>>> Stashed changes
 =======
 ps(2) = subplot(2,3,3)
 >>>>>>> Stashed changes
@@ -199,7 +207,11 @@ text(NW(1),NW(2),'(c)', 'FontSize', 30)
 
 % Sep trajectories
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 tr(2) = subplot(2,3,5)
+=======
+tr(2) = subplot(2,3,4)
+>>>>>>> Stashed changes
 =======
 tr(2) = subplot(2,3,4)
 >>>>>>> Stashed changes
@@ -217,7 +229,11 @@ text(NW(1),NW(2),'(d)', 'FontSize', 30)
 
 % Above PS
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ps(3) = subplot(2,3,3)
+=======
+ps(3) = subplot(2,3,5)
+>>>>>>> Stashed changes
 =======
 ps(3) = subplot(2,3,5)
 >>>>>>> Stashed changes

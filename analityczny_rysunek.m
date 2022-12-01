@@ -1,15 +1,14 @@
 clc
 clear
-
-set(0,'defaulttextinterpreter','latex');
-set(0,'DefaultLineLineWidth', 1.25); 
-set(0, 'defaultAxesTickLabelInterpreter','latex');
+%set(0,'defaulttextinterpreter','latex');
+set(0,'DefaultLineLineWidth', 2); 
+%set(0, 'defaultAxesTickLabelInterpreter','latex');
 set(0,'defaultAxesFontSize',30);
 set(0,'defaultAxesFontName', 'TeX Gyre Schola Math');
 set(0,'defaulttextinterpreter','latex');
 set(0, 'defaultAxesTickLabelInterpreter','latex');
 set(0,'defaultAxesFontName', 'TeX Gyre Schola Math');
-%set(groot, 'defaultFigureUnits', 'centimeters', 'defaultFigurePosition', [0 0 25 25]);
+
 N = 2000;
 dt = 0.01;
 time = [0:dt:dt*N]; %siatka czasowa
@@ -148,127 +147,123 @@ text(NW(1),NW(2),'(f)', 'FontSize', 30)
 set(0,'defaultAxesFontSize',20);
 figure(7)
 %}
+h = figure('Name','UUDO phase space and trajectories','NumberTitle','off','color','w');
+h.WindowState = 'maximized';
+
+t = tiledlayout(3,5,'TileSpacing','tight', 'Padding', 'tight');
 
 % Below PS
-ps(1) = subplot(2,3,1)
-plot(x_below, p_below, '-k', 'LineWidth', 2) 
+%ps(1) = subplot(3,2,1)
+ps(1) = nexttile;
+plot(x_below, p_below, '-k') 
 hold on
 plot(x0_below, p0_below, 'or', 'MarkerFaceColor', 'r')
 %xlabel('$X$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
-ylabel('$P$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
-axis square
+%ylabel('$P$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
+axis square;
+%box on;
 %axis([-5 5 -3.5 3.5])
 %xticks([-5 -4 -3 -2 -1 0 1 2 3 4 5])
-NW = [min(xlim) max(ylim)]+[diff(xlim)*0.02 -diff(ylim)*0.05];
-text(NW(1),NW(2),'(a)', 'FontSize', 30)
-
+%NW = [min(xlim) max(ylim)]+[diff(xlim)*0.02 -diff(ylim)*0.05];
+%text(NW(1),NW(2),'(a)', 'FontSize', 30)
+set(gca,'LineWidth', 2);
 
 % Below trajectories
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-tr(1) = subplot(2,3,4)
-=======
-tr(1) = subplot(2,3,2)
->>>>>>> Stashed changes
-=======
-tr(1) = subplot(2,3,2)
->>>>>>> Stashed changes
+tr(1) = nexttile;
+%tr(1) = subplot(3,2,2)
 plot(time, x_below, '-g', time, p_below,'-r')
 hold on
-ylabel('$X, P$ [arb. unit]', 'Interpreter', 'latex', 'FontSize',30)
-ytickformat('%.0f')
+%ylabel('$X, P$ [arb. unit]', 'Interpreter', 'latex', 'FontSize',30)
+%ytickformat('%.0f')
 %legend('$~X=X(\tau)$', '$~P=P(\tau)$', 'Interpreter', 'latex', 'Location', 'Southeast')
 %xlabel('$\tau$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
-axis square
+axis square;
 %yticks([-5 -4 -3 -2 -1 0 1 2 3 4 5])
-NW = [min(xlim) max(ylim)]+[diff(xlim)*0.02 -diff(ylim)*0.05];
-text(NW(1),NW(2),'(b)', 'FontSize', 30)
+%NW = [min(xlim) max(ylim)]+[diff(xlim)*0.02 -diff(ylim)*0.05];
+%text(NW(1),NW(2),'(b)', 'FontSize', 30)
+set(gca,'LineWidth', 2);
+
+nexttile
+set(gca,'visible','off')
+nexttile
+set(gca,'visible','off')
+nexttile
+set(gca,'visible','off')
 
 % Sep PS
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-ps(2) = subplot(2,3,2)
-=======
-ps(2) = subplot(2,3,3)
->>>>>>> Stashed changes
-=======
-ps(2) = subplot(2,3,3)
->>>>>>> Stashed changes
-plot(x_sep, p_sep, '-k', 'LineWidth', 2) 
+%ps(2) = subplot(3,2,3)
+ps(2) = nexttile;
+plot(x_sep, p_sep, '-k') 
 hold on
 plot(x0_sep, p0_sep, 'or', 'MarkerFaceColor', 'r')
-xlabel('$X$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
-%ylabel('$P$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
-axis square
+%xlabel('$X$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
+ylabel('$P$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
+axis square;
 %axis([-5 5 -3.5 3.5])
 %xticks([-5 -4 -3 -2 -1 0 1 2 3 4 5])
-NW = [min(xlim) max(ylim)]+[diff(xlim)*0.02 -diff(ylim)*0.05];
-text(NW(1),NW(2),'(c)', 'FontSize', 30)
+%NW = [min(xlim) max(ylim)]+[diff(xlim)*0.02 -diff(ylim)*0.05];
+%text(NW(1),NW(2),'(c)', 'FontSize', 30)
+set(gca,'LineWidth', 2);
 
 % Sep trajectories
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-tr(2) = subplot(2,3,5)
-=======
-tr(2) = subplot(2,3,4)
->>>>>>> Stashed changes
-=======
-tr(2) = subplot(2,3,4)
->>>>>>> Stashed changes
+%tr(2) = subplot(3,2,4)
+tr(2) = nexttile;
 plot(time, x_sep, '-g', time, p_sep,'-r')
-hold on
-%ylabel('$X, P$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
-ytickformat('%.0f')
+%hold on
+ylabel('$X, P$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
+%ytickformat('%.0f')
 legend('$~X=X(\tau)$', '$~P=P(\tau)$', 'Interpreter', 'latex', 'Location', 'Southeast')
-xlabel('$\tau$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
-axis square
+%xlabel('$\tau$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
+axis square; 
+%daspect(tr(2),[1 1 1]);
+%pbaspect(tr(2),[1 1 1]);
 %axis([0 20 -5 5])
 %yticks([-5 -4 -3 -2 -1 0 1 2 3 4 5])
-NW = [min(xlim) max(ylim)]+[diff(xlim)*0.02 -diff(ylim)*0.05];
-text(NW(1),NW(2),'(d)', 'FontSize', 30)
+%NW = [min(xlim) max(ylim)]+[diff(xlim)*0.02 -diff(ylim)*0.05];
+%text(NW(1),NW(2),'(d)', 'FontSize', 30)
+set(gca,'LineWidth', 2);
+
+nexttile
+set(gca,'visible','off')
+nexttile
+set(gca,'visible','off')
+nexttile
+set(gca,'visible','off')
 
 % Above PS
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-ps(3) = subplot(2,3,3)
-=======
-ps(3) = subplot(2,3,5)
->>>>>>> Stashed changes
-=======
-ps(3) = subplot(2,3,5)
->>>>>>> Stashed changes
-plot(x_above, p_above, '-k', 'LineWidth', 2) 
+%ps(3) = subplot(3,2,5)
+ps(3) = nexttile;
+plot(x_above, p_above, '-k') 
 hold on
 plot(x0_above, p0_above, 'or', 'MarkerFaceColor', 'r')
-%xlabel('$X$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
+xlabel('$X$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
 %ylabel('$P$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
-axis square
+axis square;
 %axis([-5 5 -3.5 3.5])
 %xticks([-5 -4 -3 -2 -1 0 1 2 3 4 5])
-NW = [min(xlim) max(ylim)]+[diff(xlim)*0.02 -diff(ylim)*0.05];
-text(NW(1),NW(2),'(e)', 'FontSize', 30)
-%grid on
+set(gca,'LineWidth', 2);
 
 % Above trajectories
-tr(3) = subplot(2,3,6)
+%tr(3) = subplot(3,2,6)
+tr(3) = nexttile;
 plot(time, x_above, '-g', time, p_above,'-r')
-hold on
+%hold on
 %ylabel('$X, P$ [arb. unit]', 'Interpreter', 'latex')
-ytickformat('%.0f')
+%ytickformat('%.0f')
 %legend('$~X=X(\tau)$', '$~P=P(\tau)$', 'Interpreter', 'latex', 'Location', 'Southeast')
-%xlabel('$\tau$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
-axis square
+xlabel('$\tau$ [arb. unit]', 'Interpreter', 'latex', 'FontSize', 30)
+axis square;
 %axis([0 20 -5 5])
 %yticks([-5 -4 -3 -2 -1 0 1 2 3 4 5])
-NW = [min(xlim) max(ylim)]+[diff(xlim)*0.02 -diff(ylim)*0.05];
-text(NW(1),NW(2),'(f)', 'FontSize', 30)
+%NW = [min(xlim) max(ylim)]+[diff(xlim)*0.02 -diff(ylim)*0.05];
+%text(NW(1),NW(2),'(f)', 'FontSize', 30)
+set(gca,'LineWidth', 2);
 
-tr(1).LineWidth = 1.5;
-tr(2).LineWidth = 1.5;
-tr(3).LineWidth = 1.5
+nexttile
+set(gca,'visible','off')
+nexttile
+set(gca,'visible','off')
+nexttile
+set(gca,'visible','off')
 
-ps(1).LineWidth = 1.5;
-ps(2).LineWidth = 1.5;
-ps(3).LineWidth = 1.5;
-
-set(gcf,'color','w');
+set(gcf,'renderer','painters');

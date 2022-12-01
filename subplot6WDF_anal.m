@@ -1,6 +1,6 @@
 %% Subplots
 set(0,'defaulttextinterpreter','latex');
-set(0,'DefaultLineLineWidth', 1.25); 
+set(0,'DefaultLineLineWidth', 2); 
 set(0, 'defaultAxesTickLabelInterpreter','latex');
 set(0,'defaultAxesFontSize',30);
 set(0,'defaultAxesFontName', 'TeX Gyre Schola Math');
@@ -23,7 +23,7 @@ text(NW(1),NW(2),'(a)', 'FontSize', 30)
 
 axis square;
 colormap(redblue);
-caxis([-w0 w0]);
+clim([-w0 w0]);
 
 % Below trajectories
 pp(1) = subplot(2,3,4);
@@ -34,7 +34,7 @@ NW = [max(xlim) max(ylim)]+[-diff(xlim)*0.19 -diff(ylim)*0.08];
 text(NW(1),NW(2),'(b)', 'FontSize', 30);
 
 colormap(redblue);
-caxis([-w0 w0]);
+clim([-w0 w0]);
 
 % Sep PS
 xx(2) = subplot(2,3,2);
@@ -46,7 +46,7 @@ NW = [max(xlim) max(ylim)]+[-diff(xlim)*0.19 -diff(ylim)*0.08];
 text(NW(1),NW(2),'(c)', 'FontSize', 30);
 
 colormap(redblue);
-caxis([-w0 w0]);
+clim([-w0 w0]);
 
 % Sep trajectories
 pp(2) = subplot(2,3,5);
@@ -57,7 +57,7 @@ NW = [max(xlim) max(ylim)]+[-diff(xlim)*0.19 -diff(ylim)*0.08];
 text(NW(1),NW(2),'(d)', 'FontSize', 30);
 
 colormap(redblue);
-caxis([-w0 w0]);
+clim([-w0 w0]);
 
 
 % Above PS
@@ -70,7 +70,7 @@ text(NW(1),NW(2),'(e)', 'FontSize', 30);
 axis square;
 
 colormap(redblue);
-caxis([-w0 w0]);
+clim([-w0 w0]);
 
 % Above trajectories
 pp(3) = subplot(2,3,6);
@@ -80,7 +80,7 @@ NW = [max(xlim) max(ylim)]+[-diff(xlim)*0.19 -diff(ylim)*0.08];
 text(NW(1),NW(2),'(f)', 'FontSize', 30);
 
 colormap(redblue);
-caxis([-w0 w0]);
+clim([-w0 w0]);
 
 xx(1).LineWidth = 1.5;
 xx(2).LineWidth = 1.5;
